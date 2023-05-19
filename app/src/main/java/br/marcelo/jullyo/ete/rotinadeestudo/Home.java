@@ -9,14 +9,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
-import java.util.ArrayList;
-
 public class Home extends AppCompatActivity {
     String disciplina, assunto,dataHora;
     EditText editDisciplina, editAssunto,editDataH;
     Conexao conn;
 
-    ArrayList<String> dados = new ArrayList<>();
 
 
     @Override
@@ -24,13 +21,12 @@ public class Home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        editDisciplina = findViewById(R.id.editTexDisciplina);
-        editAssunto = findViewById(R.id.editTextAssunto);
-        editDataH = findViewById(R.id.editTextData);
-
         conn = new Conexao(this);
         SQLiteDatabase db = conn.getReadableDatabase();
 
+        editDisciplina = findViewById(R.id.editTexDisciplina);
+        editAssunto = findViewById(R.id.editTextAssunto);
+        editDataH = findViewById(R.id.editTextData);
 
 
     }
@@ -47,8 +43,6 @@ public class Home extends AppCompatActivity {
         }else {
 
             Planejamento planejamento = new Planejamento();
-            dados.add(editDisciplina.getText().toString()+ " -- " + editAssunto.getText().toString()+ " -- "
-                    +editDataH.getText().toString());
             planejamento.setDisciplina(editDisciplina.getText().toString());
             planejamento.setAssunto(editAssunto.getText().toString());
             planejamento.setData_hora(editDataH.getText().toString());
@@ -68,7 +62,6 @@ public class Home extends AppCompatActivity {
     public void acompanhar(View v){
 
         Intent i = new Intent(Home.this,Lista_dados.class);
-        i.putExtra("dados",dados);
         startActivity(i);
 
 

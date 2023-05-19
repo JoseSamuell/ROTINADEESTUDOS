@@ -52,7 +52,7 @@
         app:layout_constraintTop_toBottomOf="@+id/editTexDisciplina" />
 
     <EditText
-        android:id="@+id/editTextData"
+        android:id="@+id/editTextAssunto"
         android:layout_width="249dp"
         android:layout_height="40dp"
         android:layout_marginStart="16dp"
@@ -78,10 +78,10 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextData" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextAssunto" />
 
     <EditText
-        android:id="@+id/editTextAssunto"
+        android:id="@+id/editTextData"
         android:layout_width="249dp"
         android:layout_height="39dp"
         android:layout_marginStart="16dp"
@@ -105,7 +105,7 @@
         android:onClick="salvar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextAssunto" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextData" />
 
     <Button
         android:id="@+id/button2"

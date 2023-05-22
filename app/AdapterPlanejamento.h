@@ -1,0 +1,16 @@
+//
+// Created by Aluno on 22/05/2023.
+//
+
+#ifndef ROTINA_DE_ESTUDO_ADAPTERPLANEJAMENTO_H
+#define ROTINA_DE_ESTUDO_ADAPTERPLANEJAMENTO_H
+
+
+
+class AdapterPlanejamento {
+
+};
+
+
+
+#endif //ROTINA_DE_ESTUDO_ADAPTERPLANEJAMENTO_H

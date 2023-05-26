@@ -1,10 +1,12 @@
-package br.marcelo.jullyo.ete.rotinadeestudo;
+package br.marcelo.jullyo.ete.rotinadeestudo.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+
+import br.marcelo.jullyo.ete.rotinadeestudo.R;
 
 public class Activity_Splash extends AppCompatActivity {
 
@@ -19,7 +21,7 @@ public class Activity_Splash extends AppCompatActivity {
 
                     sleep(5000);
 
-                    Intent i=new Intent(getBaseContext(),MainActivity.class);
+                    Intent i=new Intent(getBaseContext(), MainActivity.class);
                     startActivity(i);
 
 

@@ -1,4 +1,4 @@
-package br.marcelo.jullyo.ete.rotinadeestudo;
+package br.marcelo.jullyo.ete.rotinadeestudo.model;
 
 public class Planejamento {
    private int id;
@@ -6,13 +6,13 @@ public class Planejamento {
    private String data_hora;
    private String assunto;
 
-   // public int getId() {
-     //   return id;
-   // }
+    public int getId() {
+       return id;
+    }
 
-  //  public void setId(int id) {
-      //  this.id = id;
-   // }
+   public void setId(int id) {
+        this.id = id;
+    }
 
     public String getDisciplina() {
         return disciplina;

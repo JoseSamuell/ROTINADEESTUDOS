@@ -4,10 +4,12 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Aluno/AndroidStudioProjects/Rotinadeestudo/app/src/main/res/drawable/format_edit.xml" value="0.2985" />
+        <entry key="..\:/Users/Aluno/AndroidStudioProjects/Rotinadeestudo/app/src/main/res/drawable/layout_rounded_background.xml" value="0.298" />
         <entry key="..\:/Users/Aluno/AndroidStudioProjects/Rotinadeestudo/app/src/main/res/layout/activity_home.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Aluno/AndroidStudioProjects/Rotinadeestudo/app/src/main/res/layout/activity_lista_dados.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Aluno/AndroidStudioProjects/Rotinadeestudo/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Aluno/AndroidStudioProjects/Rotinadeestudo/app/src/main/res/layout/activity_splash.xml" value="0.25" />
+        <entry key="..\:/Users/Aluno/AndroidStudioProjects/Rotinadeestudo/app/src/main/res/layout/item_lista.xml" value="0.35260416666666666" />
       </map>
     </option>
   </component>

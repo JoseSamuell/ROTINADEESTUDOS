@@ -1,4 +1,4 @@
-package br.marcelo.jullyo.ete.rotinadeestudo;
+package br.marcelo.jullyo.ete.rotinadeestudo.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,7 +7,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 
-import java.util.ArrayList;
+import br.marcelo.jullyo.ete.rotinadeestudo.R;
+import br.marcelo.jullyo.ete.rotinadeestudo.conexao.Conexao;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void proximo (View view) {
-        Intent tela = new Intent(MainActivity.this,Home.class);
+        Intent tela = new Intent(MainActivity.this, Home.class);
 
         startActivity(tela);
     }

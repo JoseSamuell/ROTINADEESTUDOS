@@ -1,18 +1,21 @@
-package br.marcelo.jullyo.ete.rotinadeestudo;
+package br.marcelo.jullyo.ete.rotinadeestudo.view;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
+import br.marcelo.jullyo.ete.rotinadeestudo.controller.PlaneController;
+import br.marcelo.jullyo.ete.rotinadeestudo.model.Planejamento;
+import br.marcelo.jullyo.ete.rotinadeestudo.R;
+
 public class Home extends AppCompatActivity {
     String disciplina, assunto,dataHora;
     EditText editDisciplina, editAssunto,editDataH;
-    Conexao conn;
+    PlaneController pc;
 
 
 
@@ -21,8 +24,8 @@ public class Home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        conn = new Conexao(this);
-        SQLiteDatabase db = conn.getReadableDatabase();
+
+        pc = new PlaneController(getBaseContext());
 
         editDisciplina = findViewById(R.id.editTexDisciplina);
         editAssunto = findViewById(R.id.editTextAssunto);
@@ -46,7 +49,7 @@ public class Home extends AppCompatActivity {
             planejamento.setDisciplina(editDisciplina.getText().toString());
             planejamento.setAssunto(editAssunto.getText().toString());
             planejamento.setData_hora(editDataH.getText().toString());
-            conn.inserirDados(planejamento);
+            pc.inserirDados(planejamento);
 
             editDisciplina.setText("");
             editAssunto.setText("");
@@ -61,7 +64,7 @@ public class Home extends AppCompatActivity {
     }
     public void acompanhar(View v){
 
-        Intent i = new Intent(Home.this,Lista_dados.class);
+        Intent i = new Intent(Home.this, Lista_dados.class);
         startActivity(i);
 
 

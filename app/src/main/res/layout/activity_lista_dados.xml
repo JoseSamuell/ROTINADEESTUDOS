@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/tela_secundaria"
-    tools:context=".Lista_dados">
+    tools:context=".view.Lista_dados">
 
     <TextView
         android:id="@+id/textViewResultado"
@@ -33,5 +33,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewResultado" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewResultado"
+        app:layout_constraintVertical_bias="0.414">
+
+
+    </ListView>
 </androidx.constraintlayout.widget.ConstraintLayout>

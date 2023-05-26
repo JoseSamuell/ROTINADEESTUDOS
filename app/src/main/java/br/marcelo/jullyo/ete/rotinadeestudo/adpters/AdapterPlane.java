@@ -1,25 +1,31 @@
-package br.marcelo.jullyo.ete.rotinadeestudo;
+package br.marcelo.jullyo.ete.rotinadeestudo.adpters;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.BaseAdapter;
 import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class AdapterPlane {
+import br.marcelo.jullyo.ete.rotinadeestudo.R;
+import br.marcelo.jullyo.ete.rotinadeestudo.model.Planejamento;
+
+public class AdapterPlane extends BaseAdapter implements Filterable {
 
     private LayoutInflater mInflater;
-    private ArrayList<String> pessoas;
-    ArrayList<String> pessoasFiltrados;
+    private ArrayList<Planejamento> planejamentos;
+    ArrayList<Planejamento> pessoasFiltrados;
 
 
 
-    public AdapterPlane(Context context, ArrayList<String> pessoas) {
+    public AdapterPlane(Context context, ArrayList<Planejamento> planejamentos) {
         //Itens que preencheram o listview
-        this.pessoas = pessoas;
-        pessoasFiltrados = pessoas;
+        this.planejamentos = planejamentos;
+        pessoasFiltrados = planejamentos;
 
         //responsavel por pegar o Layout do item.
         mInflater = LayoutInflater.from(context);
@@ -31,7 +37,7 @@ public class AdapterPlane {
      * @return
      */
     public int getCount() {
-        return pessoas.size();
+        return planejamentos.size();
     }
 
     /**
@@ -40,8 +46,8 @@ public class AdapterPlane {
      * @param position
      * @return
      */
-    public Pessoa getItem(int position) {
-        return pessoas.get(position);
+    public Planejamento getItem(int position) {
+        return planejamentos.get(position);
     }
 
     /**
@@ -56,15 +62,16 @@ public class AdapterPlane {
 
     public View getView(int position, View view, ViewGroup parent) {
         //Pega o item de acordo com a posição.
-        Pessoa pessoa = pessoas.get(position);
+        Planejamento planejamento = planejamentos.get(position);
         //infla o layout para podermos preencher os dados
         view = mInflater.inflate(R.layout.item_lista, null);
 
 
 
-        ((TextView) view.findViewById(R.id.textViewDestaque)).setText(pessoa.getNome().toUpperCase().substring(0,1));
-        ((TextView) view.findViewById(R.id.textViewTitulo)).setText(pessoa.getNome());
-        ((TextView) view.findViewById(R.id.textViewSubtitulo)).setText(pessoa.getCpf());
+        ((TextView) view.findViewById(R.id.textViewDestaque)).setText(planejamento.getDisciplina().toUpperCase().substring(0,1));
+        ((TextView) view.findViewById(R.id.textViewDisciplina)).setText(planejamento.getDisciplina());
+        ((TextView) view.findViewById(R.id.textViewAssunto)).setText(planejamento.getAssunto());
+        ((TextView) view.findViewById(R.id.textViewHora)).setText(planejamento.getData_hora());
 
 
 
@@ -93,13 +100,13 @@ public class AdapterPlane {
             FilterResults results = new FilterResults();
 
             if (constraint != null && constraint.length() > 0) {
-                ArrayList<String> filterList = new ArrayList<String>();
+                ArrayList<Planejamento> filterList = new ArrayList<Planejamento>();
                 for (int i = 0; i < pessoasFiltrados.size(); i++) {
-                    if ((pessoasFiltrados.get(i).getNome().toUpperCase())
+                    if ((pessoasFiltrados.get(i).getDisciplina().toUpperCase())
                             .contains(constraint.toString().toUpperCase())) {
 
-                        Pessoa cliente = new Pessoa();
-                        filterList.add(cliente);
+                        Planejamento planejamento = new Planejamento();
+                        filterList.add(planejamento);
                     }
                 }
                 results.count = filterList.size();
@@ -114,7 +121,7 @@ public class AdapterPlane {
 
         @Override
         protected void publishResults(CharSequence charSequence, FilterResults results) {
-            pessoas = (ArrayList<String>) results.values;
+            planejamentos = (ArrayList<Planejamento>) results.values;
             notifyDataSetChanged();
         }
     };
